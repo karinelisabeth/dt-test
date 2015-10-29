@@ -1,4 +1,11 @@
-class Inventory < ActiveRecord::Base
+class Inventory 
+    include Mongoid::Document
+    field :sku, type: String
+    field :name, type: String
+    field :manufacturer, type: String
+    field :cost, type: Float
+    field :weight, type: Float
+    field :stock, type: Integer
 
   # def as_json(options = {})
   #   {
