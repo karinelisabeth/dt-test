@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  name: MyString
+  manufacturer: MyString
+  cost: 1.5
+  weight: 1.5
+  stock: 1
+
+two:
+  sku: MyString
+  name: MyString
+  manufacturer: MyString
+  cost: 1.5
+  weight: 1.5
+  stock: 1

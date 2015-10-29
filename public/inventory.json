@@ -1,0 +1,426 @@
+[
+    {
+      "sku": "123",
+      "name": "lemon",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.32,
+      "weight": 1.2,
+      "stock": 500
+    },
+    {
+      "sku": "231",
+      "name": "peach",
+      "manufacturer": "Peach Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "232",
+      "name": "apple",
+      "manufacturer": "Peach Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    },
+    {
+      "sku": "234",
+      "name": "orange",
+      "manufacturer": "Fruits Inc",
+      "cost": 0.20,
+      "weight": 0.1,
+      "stock": 432
+    },
+    {
+      "sku": "321",
+      "name": "apple",
+      "manufacturer": "Apple Inc",
+      "cost": 1.23,
+      "weight": 0.12,
+      "stock": 434
+    }
+  ]
