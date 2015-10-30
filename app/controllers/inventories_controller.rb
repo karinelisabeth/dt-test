@@ -20,7 +20,8 @@ class InventoriesController < ApplicationController
   end
 
   def destroy
-    respond_with Inventory.destroy(params[:id])
+    @inventory = Inventory.find(params[:id])
+    respond_with @inventory.destroy
   end
 
   private
@@ -31,7 +32,15 @@ class InventoriesController < ApplicationController
   end
 
   def inventories_params
-    params.require(:inventory).permit(:id, :sku, :name, :manufacturer, :cost, :weight, :stock, :created_at, :updated_at)
+    
+    params_hash = ActionController::Parameters.new(
+      {
+        sku: params['data']['0']['sku'],
+        name: params['data']['0']['sku'] 
+      }
+    )
+
+    params_hash.permit(:id, :sku, :name, :manufacturer, :cost, :weight, :stock, :created_at, :updated_at)
   end
 
   
