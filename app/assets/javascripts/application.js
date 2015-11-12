@@ -19,7 +19,8 @@
 //= require angular
 //= require angular-resource
 //= require angular-ui-bootstrap
-//= require angular-datatables
+//= require angular-ui-router
+//= require angular-rails-templates
 //= require buttons/dataTables.buttons
 //= require buttons/buttons.colVis
 //= require buttons/buttons.html5
@@ -32,3 +33,4 @@
 //= require dataTables.editor.js
 //= require editor.bootstrap.js
 //= require_tree .
+//= require_tree ./products

@@ -11,17 +11,25 @@ class InventoriesController < ApplicationController
   end
 
   def create
-    respond_with Inventory.create(inventories_params)
+    @item = Inventory.create(inventories_params)
+    render json: { data: [@item] }.to_json.html_safe
   end
 
   def update
-    @inventory = Inventory.find(params[:id])
-    respond_with @inventory.update(inventories_params)
+    @item = Inventory.find(params[:id])
+    @item.update inventories_params
+    
+    render json: { data: [@item] }.to_json.html_safe
+
   end
 
   def destroy
     @inventory = Inventory.find(params[:id])
-    respond_with @inventory.destroy
+    if @inventory.destroy
+      render json: {}
+    else
+      # handle the error
+    end
   end
 
   private
@@ -32,11 +40,16 @@ class InventoriesController < ApplicationController
   end
 
   def inventories_params
+    id = params[:id] || '0'
     
     params_hash = ActionController::Parameters.new(
       {
-        sku: params['data']['0']['sku'],
-        name: params['data']['0']['sku'] 
+        sku: params['data'][id]['sku'],
+        name: params['data'][id]['name'],
+        manufacturer: params['data'][id]['manufacturer'],
+        cost: params['data'][id]['cost'],
+        weight: params['data'][id]['weight'],
+        stock: params['data'][id]['stock']
       }
     )
 

@@ -2,7 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-app = angular.module('Inv', ["ngResource"])
+app = angular.module('Inv', ["ngResource","ui.bootstrap","ui.router","templates"])
+
+app.config [
+  '$stateProvider'
+  '$urlRouterProvider'
+  ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+    .state 'products',
+      url: '/products'
+      templateUrl: 'products/_products.html'
+      controller: 'ProductsCtrl'
+    $urlRouterProvider.otherwise 'products'
+    return
+]
+
 
 #*************************************************************
 #** DATATABLE DIRECTIVE from http://jsfiddle.net/TNy3w/611/ **
@@ -23,7 +37,7 @@ app.directive 'myTable', ->
 #** CONTROLLER **
 #*************************
 
-app.controller 'InventoryCtrl', ($scope, $resource) ->
+app.controller 'ProductsCtrl', ($scope, $resource) ->
 
   $scope.options =
     'paging': true
