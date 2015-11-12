@@ -32,5 +32,7 @@
 //= require select/dataTables.select
 //= require dataTables.editor.js
 //= require editor.bootstrap.js
+//= require myApp
 //= require_tree .
 //= require_tree ./products
+//= require_tree ./customers

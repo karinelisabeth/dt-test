@@ -4,15 +4,36 @@
 
 app = angular.module('Inv', ["ngResource","ui.bootstrap","ui.router","templates"])
 
-app.config [
-  '$stateProvider'
-  '$urlRouterProvider'
-  ($stateProvider, $urlRouterProvider) ->
+#angular.module('Inv').controller 'customersCtrl', ['$scope', '$resource', ($scope, $resource) ->
+
+
+angular.module('Inv').controller 'productsCtrl', ['$scope', ($scope) ->
+  $scope.options =
+    'paging': true
+]
+
+# checks which is the active URL. From http://stackoverflow.com/questions/16199418/how-do-i-implement-the-bootstrap-navbar-active-class-with-angular-js
+# answer 27
+app.controller 'navCtrl', ['$scope', '$location', ($scope, $location) ->
+  $scope.isActive = (viewLocation) ->
+    active = viewLocation == $location.url()
+    active
+]
+
+
+app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+    
     $stateProvider
     .state 'products',
       url: '/products'
       templateUrl: 'products/_products.html'
-      controller: 'ProductsCtrl'
+      controller: 'productsCtrl'
+      
+    .state 'customers',
+      url: '/customers'
+      templateUrl: 'customers/_customers.html'
+      controller: 'customersCtrl'
+      
     $urlRouterProvider.otherwise 'products'
     return
 ]
@@ -33,14 +54,6 @@ app.directive 'myTable', ->
     options: '='
   }
 
-#*************************
-#** CONTROLLER **
-#*************************
-
-app.controller 'ProductsCtrl', ($scope, $resource) ->
-
-  $scope.options =
-    'paging': true
 
 
 
