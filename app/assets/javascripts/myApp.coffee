@@ -4,14 +4,6 @@
 
 app = angular.module('Inv', ["ngResource","ui.bootstrap","ui.router","templates"])
 
-#angular.module('Inv').controller 'customersCtrl', ['$scope', '$resource', ($scope, $resource) ->
-
-
-angular.module('Inv').controller 'productsCtrl', ['$scope', ($scope) ->
-  $scope.options =
-    'paging': true
-]
-
 # checks which is the active URL. From http://stackoverflow.com/questions/16199418/how-do-i-implement-the-bootstrap-navbar-active-class-with-angular-js
 # answer 27
 app.controller 'navCtrl', ['$scope', '$location', ($scope, $location) ->
@@ -19,7 +11,6 @@ app.controller 'navCtrl', ['$scope', '$location', ($scope, $location) ->
     active = viewLocation == $location.url()
     active
 ]
-
 
 app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
     
@@ -43,17 +34,82 @@ app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouter
 #** DATATABLE DIRECTIVE from http://jsfiddle.net/TNy3w/611/ **
 #*************************************************************
 
-app.directive 'myTable', ->
+app.directive 'myTable', [ ->
   {
-  restrict: 'E, A, C'
-  link: (scope, element, attrs, controller) ->
-    dataTable = element.dataTable(scope.options)
-
-# If you want instead to have a bi-directional binding between the parent scope and the local scope, you should use the = equality character
-  scope:
-    options: '='
+    restrict: 'A'
+    scope:
+      tableAjax:"=tableAjax"
+      tabledom:"=tabledom"
+    link: (scope, element, attrs) ->
+      editor = new ($.fn.dataTable.Editor)(
+        'ajax':
+          create:
+            type: 'POST'
+            url: '/inventories'
+          edit:
+            type: 'PUT'
+            url: '/inventories/_id_'
+          remove:
+            type: 'DELETE'
+            url: '/inventories/_id_'
+        'fields': [
+            {
+              'label': 'SKU:'
+              'name': 'sku'
+            }
+            {
+              'label': 'Name:'
+              'name': 'name'
+            }
+            {
+              'label': 'Manufacturer:'
+              'name': 'manufacturer'
+            }
+            {
+              'label': 'Cost:'
+              'name': 'cost'
+            }
+            {
+              'label': 'Weight:'
+              'name': 'weight'
+            }
+            {
+              'label': 'Stock:'
+              'name': 'stock'
+            }
+        ])
+      element.DataTable
+        'dom':scope.tabledom
+        'ajax':scope.tableAjax
+        'columns': [
+          { 'data': '_id' }
+          { 'data': 'sku' }
+          { 'data': 'name' }
+          { 'data': 'manufacturer' }
+          { 'data': 'cost' }
+          { 'data': 'weight' }
+          { 'data': 'stock' }
+        ]
+        select: true
+        buttons: [
+          {
+            extend: 'create'
+            editor: editor
+          }
+          {
+            extend: 'edit'
+            editor: editor
+          }
+          {
+            extend: 'remove'
+            editor: editor
+          }
+        ]
+      return
   }
+ ]
 
+  
 
 
 
