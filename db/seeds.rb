@@ -6,12 +6,29 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Inventory.create(
+contacts = Contact.create(
+    [
+        {
+            name:"Contact name 1",
+            email: "email1@example.com",
+            is_supplier: true,
+            is_customer: false,
+        },
+        {
+            name:"Contact name 2",
+            email: "email2@example.com",
+            is_supplier: true,
+            is_customer: false,
+        }
+        ]
+    )
+
+inventories = Inventory.create(
     [
         {
             sku: "123",
             name: "lemon",
-            manufacturer: "Fruits Inc",
+            manufacturer: "Supplier1",
             cost: 0.32,
             weight: 1.2,
             stock: 500
@@ -19,10 +36,16 @@ Inventory.create(
         {
             sku: "234",
             name: "apple",
-            manufacturer: "Fruits Inc",
+            manufacturer: "Supplier2",
             cost: 0.30,
             weight: 2.2,
             stock: 300
         }
     ]
 )
+
+i=0
+contacts.each do |c|
+    c.inventories << inventories[i]
+    i = i+1
+end

@@ -1,5 +1,6 @@
 class Inventory 
   include Mongoid::Document
+
   field :sku, type: String
   field :name, type: String
   field :manufacturer, type: String
@@ -9,20 +10,21 @@ class Inventory
     
   scope :by_sku, -> sku { where(sku: sku) }
 
-
+  belongs_to :contact
+  accepts_nested_attributes_for :contact
+  delegate :name, :to => :contact, :allow_nil => true, :prefix => true
+  
   def as_json(options = {})
      {
          "_id" => _id.to_s,
          :sku => sku,
          :name => name,
          :manufacturer => manufacturer,
+         :"contact_name" => contact_name,
          :cost => cost,
          :weight => weight,
          :stock => stock
      }
   end
 
-# {"_id":{"$oid":"563260d9e05e1c0afa000000"},"cost":0.32,"manufacturer":"Fruits Inc","name":"lemon","sku":"123","stock":500,"weight":1.2}
-
 end
-

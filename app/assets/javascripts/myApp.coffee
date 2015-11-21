@@ -31,17 +31,18 @@ app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouter
 
 
 #*************************************************************
-#** DATATABLE DIRECTIVE from http://jsfiddle.net/TNy3w/611/ **
+#** DATATABLE DIRECTIVE **
 #*************************************************************
 
-app.directive 'myTable', [ ->
-  {
+
+.directive 'myTable', [ ->
     restrict: 'A'
     scope:
-      tableAjax:"=tableAjax"
-      tabledom:"=tabledom"
+      tableajax: "="
+      editorajax: "="
+      tablename: "="
     link: (scope, element, attrs) ->
-      editor = new ($.fn.dataTable.Editor)(
+      editor = new ($.fn.dataTable.Editor)
         'ajax':
           create:
             type: 'POST'
@@ -52,6 +53,8 @@ app.directive 'myTable', [ ->
           remove:
             type: 'DELETE'
             url: '/inventories/_id_'
+        "table": '#' + scope.tablename
+        "idSrc": "_id"
         'fields': [
             {
               'label': 'SKU:'
@@ -77,10 +80,12 @@ app.directive 'myTable', [ ->
               'label': 'Stock:'
               'name': 'stock'
             }
-        ])
+        ]
       element.DataTable
-        'dom':scope.tabledom
-        'ajax':scope.tableAjax
+        'dom': 'Bfrtip'
+        'ajax': 
+          url: scope.tableajax.url
+          dataSrc: ''
         'columns': [
           { 'data': '_id' }
           { 'data': 'sku' }
@@ -106,9 +111,7 @@ app.directive 'myTable', [ ->
           }
         ]
       return
-  }
- ]
-
+]
   
 
 
