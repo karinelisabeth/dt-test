@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :inventories
+  resources :contacts
   #root 'inventories#index'
   root 'application#angular'
 
