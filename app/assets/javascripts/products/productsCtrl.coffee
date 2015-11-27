@@ -4,10 +4,12 @@ angular.module('Inv')
     $scope.hello = "hello test"
   
     contacts = Contacts.query(-> 
-        console.log(contacts)
     )
     
-    $scope.contacts = contacts
+    $scope.tablecontacts = contacts
+    
+    $scope.tablecontacts.$promise.then (result) ->
+      console.log("in promise " + result)
 
 ]
 
@@ -15,85 +17,92 @@ angular.module('Inv')
 #** DATATABLE DIRECTIVE **
 #*************************************************************
 
-
 angular.module('Inv')
-.directive 'productsTable', [ ->
+.directive 'productsTable', ['$q', ($q) ->
     restrict: 'A'
-    # scope:
-    #   tablecontacts: "="
+    scope:
+      hello: "="
+      tablecontacts: "=tablecontacts"
     link: (scope, element, attrs) ->
-      editor = new ($.fn.dataTable.Editor)
-        'ajax':
-          create:
-            type: 'POST'
-            url: '/inventories'
-          edit:
-            type: 'PUT'
-            url: '/inventories/_id_'
-          remove:
-            type: 'DELETE'
-            url: '/inventories/_id_'
-        "table": '#products'
-        "idSrc": "_id"
-        'fields': [
-            {
-              'label': 'SKU:'
-              'name': 'sku'
-            }
-            {
-              'label': 'Name:'
-              'name': 'name'
-            }
-            {
-              'label': 'Manufacturer:'
-              'name': 'manufacturer'
-            }
-            # {
-            #   "label": "Contact name:"
-            #   "name": "contact_name"
-            # }
-            {
-              'label': 'Cost:'
-              'name': 'cost'
-            }
-            {
-              'label': 'Weight:'
-              'name': 'weight'
-            }
-            {
-              'label': 'Stock:'
-              'name': 'stock'
-            }
-        ]
-      element.DataTable
-        'dom': 'Bfrtip'
-        'ajax': 
-          url: '/inventories'
-          dataSrc: ''
-        'columns': [
-          { 'data': '_id' }
-          { 'data': 'sku' }
-          { 'data': 'name' }
-          { 'data': 'manufacturer' }
-          # { "data": "contact_name"}
-          { 'data': 'cost' }
-          { 'data': 'weight' }
-          { 'data': 'stock' }
-        ]
-        select: true
-        buttons: [
-          {
-            extend: 'create'
-            editor: editor
-          }
-          {
-            extend: 'edit'
-            editor: editor
-          }
-          {
-            extend: 'remove'
-            editor: editor
-          }
-        ]
-      return
+      console.log(scope.hello)
+      scope.$watch 'tablecontacts', (new_value, old_value) ->
+        if new_value
+          console.log("in link " + scope.tablecontacts)
+          console.log("in link new_value " + new_value)
+          editor = new ($.fn.dataTable.Editor)
+            'ajax':
+              create:
+                type: 'POST'
+                url: '/inventories'
+              edit:
+                type: 'PUT'
+                url: '/inventories/_id_'
+              remove:
+                type: 'DELETE'
+                url: '/inventories/_id_'
+            "table": '#products'
+            "idSrc": "_id"
+            'fields': [
+                {
+                  'label': 'SKU:'
+                  'name': 'sku'
+                }
+                {
+                  'label': 'Name:'
+                  'name': 'name'
+                }
+                {
+                  'label': 'Manufacturer:'
+                  'name': 'manufacturer'
+                }
+                {
+                  "label": 'Contact name:'
+                  "name": 'contact_name'
+                  "type": 'select'
+                  "options": ["test name 1", "test name 2", "test name 3"]
+                }
+                {
+                  'label': 'Cost:'
+                  'name': 'cost'
+                }
+                {
+                  'label': 'Weight:'
+                  'name': 'weight'
+                }
+                {
+                  'label': 'Stock:'
+                  'name': 'stock'
+                }
+            ]
+          element.DataTable
+            'dom': 'Bfrtip'
+            'ajax': 
+              url: '/inventories'
+              dataSrc: ''
+            'columns': [
+              { 'data': '_id' }
+              { 'data': 'sku' }
+              { 'data': 'name' }
+              { 'data': 'manufacturer' }
+              { "data": 'contact_name'}
+              { 'data': 'cost' }
+              { 'data': 'weight' }
+              { 'data': 'stock' }
+            ]
+            select: true
+            buttons: [
+              {
+                extend: 'create'
+                editor: editor
+              }
+              {
+                extend: 'edit'
+                editor: editor
+              }
+              {
+                extend: 'remove'
+                editor: editor
+              }
+            ]
+          return
 ]
