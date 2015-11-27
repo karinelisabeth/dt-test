@@ -21,6 +21,7 @@ class Inventory
          :name => name,
          :manufacturer => manufacturer,
          :"contact_name" => contact_name,
+         :"contact_id" => contact_id,
          :cost => cost,
          :weight => weight,
          :stock => stock

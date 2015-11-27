@@ -57,9 +57,9 @@ angular.module('Inv')
                 }
                 {
                   "label": 'Contact name:'
-                  "name": 'contact_name'
+                  "name": 'contact_id'
                   "type": 'select'
-                  "options": ["test name 1", "test name 2", "test name 3"]
+                  "options": [{label: "test name 1", value: 1},{label: "test name 2", value: 2}, {label: "test name 3", value:3}]
                 }
                 {
                   'label': 'Cost:'
