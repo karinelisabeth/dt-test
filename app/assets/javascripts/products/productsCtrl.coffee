@@ -41,53 +41,52 @@ angular.module('Inv')
                 type: 'DELETE'
                 url: '/inventories/_id_'
             "table": '#products'
-            "idSrc": "_id"
+            # "idSrc": "_id"
             'fields': [
                 {
                   'label': 'SKU:'
-                  'name': 'sku'
+                  'name': 'inventories.sku'
                 }
                 {
                   'label': 'Name:'
-                  'name': 'name'
+                  'name': 'inventories.name'
                 }
                 {
                   'label': 'Manufacturer:'
-                  'name': 'manufacturer'
+                  'name': 'inventories.manufacturer'
                 }
                 {
                   "label": 'Contact name:'
-                  "name": 'contact_id'
+                  "name": 'inventories.contact_id'
                   "type": 'select'
-                  "options": [{label: "test name 1", value: 1},{label: "test name 2", value: 2}, {label: "test name 3", value:3}]
                 }
                 {
                   'label': 'Cost:'
-                  'name': 'cost'
+                  'name': 'inventories.cost'
                 }
                 {
                   'label': 'Weight:'
-                  'name': 'weight'
+                  'name': 'inventories.weight'
                 }
                 {
                   'label': 'Stock:'
-                  'name': 'stock'
+                  'name': 'inventories.stock'
                 }
             ]
           element.DataTable
             'dom': 'Bfrtip'
             'ajax': 
               url: '/inventories'
-              dataSrc: ''
+              # dataSrc: ''
             'columns': [
-              { 'data': '_id' }
-              { 'data': 'sku' }
-              { 'data': 'name' }
-              { 'data': 'manufacturer' }
-              { "data": 'contact_name'}
-              { 'data': 'cost' }
-              { 'data': 'weight' }
-              { 'data': 'stock' }
+              { 'data': 'DT_RowId' }
+              { 'data': 'inventories.sku' }
+              { 'data': 'inventories.name' }
+              { 'data': 'inventories.manufacturer' }
+              { 'data': 'contacts.name'}
+              { 'data': 'inventories.cost' }
+              { 'data': 'inventories.weight' }
+              { 'data': 'inventories.stock' }
             ]
             select: true
             buttons: [

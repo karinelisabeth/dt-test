@@ -1,0 +1,27 @@
+  "options": {
+    "users.site": [
+      {
+        "label": "Edinburgh",
+        "value": "1"
+      },
+      {
+        "label": "London",
+        "value": "2"
+      },
+      {
+        "label": "Los Angeles",
+        "value": "6"
+      },
+      {
+        "label": "New York",
+        "value": "4"
+      },
+      {
+        "label": "Paris",
+        "value": "3"
+      },
+      {
+        "label": "Singapore",
+        "value": "5"
+      }
+    ],

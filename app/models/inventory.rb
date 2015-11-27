@@ -16,15 +16,20 @@ class Inventory
   
   def as_json(options = {})
      {
-         "_id" => _id.to_s,
-         :sku => sku,
-         :name => name,
-         :manufacturer => manufacturer,
-         :"contact_name" => contact_name,
-         :"contact_id" => contact_id,
-         :cost => cost,
-         :weight => weight,
-         :stock => stock
+         'DT_RowId': _id.to_s,
+         inventories: {
+           sku: sku,
+           name: name,
+           manufacturer: manufacturer,
+           contact_id: contact_id.to_s,
+           cost: cost,
+           weight: weight,
+           stock: stock
+         },
+         contacts:{
+           name: contact_name
+         }
+         
      }
   end
 

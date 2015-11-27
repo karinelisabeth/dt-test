@@ -5,7 +5,8 @@ class InventoriesController < ApplicationController
   has_scope :by_sku, as: :sku
   
   def index
-    respond_with collection.all
+    @items = collection.all
+    render json: { data: @items, options: {'inventories.contact_id': options_array }}.to_json.html_safe
   end
 
   def show
@@ -32,6 +33,14 @@ class InventoriesController < ApplicationController
   end
 
   private
+  
+  def options_array
+    @contacts = Contact.pluck(:id, :name)
+    h=[]
+    @contacts.each { |r|  h << {'label' => r[1], 'value' => r[0].to_s} }
+    h << {'label' => "",'value' => ""}
+    return h
+  end
   
   def collection
     apply_scopes Inventory
