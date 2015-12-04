@@ -20,7 +20,7 @@ class InventoriesController < ApplicationController
 
   def update
     @items.each do |item|
-      item.update_attributes params['data'][item.id.to_s].permit(:sku, :name, :manufacturer, :cost, :weight, :stock)
+      item.update_attributes params['data'][item.id.to_s]['inventories'].permit(:sku, :name, :contact_id, :manufacturer, :cost, :weight, :stock)
     end
     render json: { data: @items }.to_json.html_safe
   end
@@ -48,7 +48,7 @@ class InventoriesController < ApplicationController
   
   def set_multiple_items
     params_ids = params[:id].split(',')
-    @items = collection.find(params_ids)
+    @items = collection.find(params_ids).to_a
   end
 
   # Use callbacks to share common setup or constraints between actions.
@@ -57,21 +57,10 @@ class InventoriesController < ApplicationController
   end
 
   def inventories_params
-    id = params[:id] || '0'
+    id = params['DT_RowId'] || '0'
+    params_hash = params['data'][id]['inventories']
     
-    params_hash = ActionController::Parameters.new(
-      {
-        sku: params['data'][id]['sku'],
-        name: params['data'][id]['name'],
-        manufacturer: params['data'][id]['manufacturer'],
-        cost: params['data'][id]['cost'],
-        weight: params['data'][id]['weight'],
-        stock: params['data'][id]['stock']
-      }
-    )
-
-    params_hash.permit(:id, :sku, :name, :manufacturer, :cost, :weight, :stock)
+    params_hash.permit(:id, :sku, :name, :manufacturer, :contact_id, :cost, :weight, :stock)
   end
 
-  
 end
