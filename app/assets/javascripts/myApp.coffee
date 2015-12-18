@@ -25,6 +25,16 @@ app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouter
       templateUrl: 'customers/_customers.html'
       controller: 'customersCtrl'
       
+    .state 'orders',
+      url: '/orders'
+      templateUrl: 'orders/_orders.html'
+      controller: 'ordersCtrl'
+      
+    .state 'order',
+      url: '/#/orders/:id/edit'
+      templateUrl: 'orders/_edit-order.html'
+      controller: 'orderCtrl'
+      
     $urlRouterProvider.otherwise 'products'
     return
 ]
@@ -54,46 +64,46 @@ app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouter
             type: 'DELETE'
             url: '/inventories/_id_'
         "table": '#' + scope.tablename
-        "idSrc": "_id"
+        # "idSrc": "_id"
         'fields': [
             {
               'label': 'SKU:'
-              'name': 'sku'
+              'name': 'inventories.sku'
             }
             {
               'label': 'Name:'
-              'name': 'name'
+              'name': 'inventories.name'
             }
             {
               'label': 'Manufacturer:'
-              'name': 'manufacturer'
+              'name': 'inventories.manufacturer'
             }
             {
               'label': 'Cost:'
-              'name': 'cost'
+              'name': 'inventories.cost'
             }
             {
               'label': 'Weight:'
-              'name': 'weight'
+              'name': 'inventories.weight'
             }
             {
               'label': 'Stock:'
-              'name': 'stock'
+              'name': 'inventories.stock'
             }
         ]
       element.DataTable
         'dom': 'Bfrtip'
         'ajax': 
           url: scope.tableajax.url
-          dataSrc: ''
+          # dataSrc: ''
         'columns': [
-          { 'data': '_id' }
-          { 'data': 'sku' }
-          { 'data': 'name' }
-          { 'data': 'manufacturer' }
-          { 'data': 'cost' }
-          { 'data': 'weight' }
-          { 'data': 'stock' }
+              { 'data': 'DT_RowId' }
+              { 'data': 'inventories.sku' }
+              { 'data': 'inventories.name' }
+              { 'data': 'inventories.manufacturer' }
+              { 'data': 'inventories.cost' }
+              { 'data': 'inventories.weight' }
+              { 'data': 'inventories.stock' }
         ]
         select: true
         buttons: [

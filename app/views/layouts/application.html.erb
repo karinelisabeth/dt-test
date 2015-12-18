@@ -23,9 +23,10 @@
     
     <div id="navbar" class="navbar-collapse collapse" ng-controller="navCtrl">
       <ul class="nav navbar-nav">
-        <li><a href="#home">Home</a></li>
-        <li ng-class="{ active: isActive('/products') }"><a href="#/products">Products</a></li>
-        <li ng-class="{ active: isActive('/customers') }"><a href="#customers">Customers</a></li>
+        <li><a href="#/home">Home</a></li> 
+        <li ng-class="{ active: isActive('/products') }"><a ui-sref="products">Products</a></li>
+        <li ng-class="{ active: isActive('/customers') }"><a ui-sref="customers">Customers</a></li>
+        <li ng-class="{ active: isActive('/orders') }"><a ui-sref="orders">Orders</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

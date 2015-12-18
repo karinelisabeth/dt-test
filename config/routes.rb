@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :inventories
   resources :contacts
+  resources :orders
   #root 'inventories#index'
   root 'application#angular'
 

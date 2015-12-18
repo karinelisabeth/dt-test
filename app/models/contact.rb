@@ -1,6 +1,7 @@
 class Contact
   include Mongoid::Document
   has_many :inventories
+  has_many :orders
   #embeds_many :addresses
   field :name, type: String
   field :email, type: String

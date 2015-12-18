@@ -1,0 +1,32 @@
+ <h1>Edit order</h1>
+ 
+ {{order}}
+  
+<form>
+      
+    <div class="form-group">
+        <label for="order_number">Order number</label>
+        <input type="text" class="form-control" name="order_number" placeholder="order number" value="{{order.order_number}}">
+    </div>
+  
+    <div class="form-group">
+        <label for="order_total">Order total</label>
+        <input type="text" class="form-control" name="order_total" placeholder="order total">
+    </div>
+  
+    <div class="form-group">
+        <label for="payment_status">Payment status</label>
+        <select class="form-control">
+            <option>Paid</option>
+            <option>Not paid</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+        <label for="contact.name">Order total</label>
+        <input type="text" class="form-control" name="contact.name" placeholder="Customer name">
+    </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+  
+</form>
