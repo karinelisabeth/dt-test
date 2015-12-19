@@ -31,11 +31,12 @@ app.config [ '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouter
       controller: 'ordersCtrl'
       
     .state 'order',
-      url: '/#/orders/:id/edit'
+      url: '/orders/:id/edit'
       templateUrl: 'orders/_edit-order.html'
       controller: 'orderCtrl'
       
     $urlRouterProvider.otherwise 'products'
+    
     return
 ]
 

@@ -1,14 +1,14 @@
 angular.module('Inv')
-.controller 'customersCtrl', ['$scope', '$resource', 'Contacts', ($scope, $resource, Contacts) ->
+.controller 'customersCtrl', ['$scope', '$resource', ($scope, $resource) ->
       
-    $scope.tablename = "customerTable"  
+    # $scope.tablename = "customerTable"  
     
-    $scope.tableajax =
-        url: '/inventories'
+    # $scope.tableajax =
+    #     url: '/inventories'
         
-    $scope.editorajax =
-        create:
-            url: '/inventories'
+    # $scope.editorajax =
+    #     create:
+    #         url: '/inventories'
         
  ]
  
